@@ -4,7 +4,7 @@
 name:                postgresql-simple-typed
 version:             0.1.0.0
 synopsis:            Typed extension for PostgreSQL simple
--- description:         
+description:         Simplifies simple
 homepage:            https://github.com/tolysz/postgresql-simple-typed
 license:             BSD3
 license-file:        LICENSE
