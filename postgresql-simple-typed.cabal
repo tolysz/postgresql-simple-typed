@@ -22,7 +22,7 @@ library
                        Database.PostgreSQL.Simple.TypedQuery
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.7 && <4.8
+  build-depends:       base >=4.5 && < 5
                ,       typedquery
                ,       postgresql-libpq
                ,       postgresql-simple
