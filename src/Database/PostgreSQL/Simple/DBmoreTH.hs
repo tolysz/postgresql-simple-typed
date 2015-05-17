@@ -17,17 +17,17 @@ import           Prelude                              hiding (null)
 null :: RowParser Null
 null =  field
 
-clap =
+clap t x =
 #if MIN_VERSION_template_haskell(2,10,0)
-   AppT
+   AppT (ConT t) (VarT x)
 #else
-   ClassP
+   ClassP t [VarT x]
 #endif
 
 qr :: Int -> Q [Dec]
 qr k = do
   ns <- replicateM k (newName "a")
-  let pre = map (\x -> clap (''FromField) [VarT x]) ns
+  let pre = map (clap ''FromField) ns
   return [ InstanceD pre (loop k ns) [fun]
          , InstanceD pre (loop2 ns) [fun2]
          ]
