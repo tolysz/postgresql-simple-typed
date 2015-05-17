@@ -10,7 +10,7 @@ module Database.PostgreSQL.Simple.TypedQuery
 where
 
 import qualified Database.PostgreSQL.Simple.Types as S (fromQuery)
-import qualified Database.PostgreSQL.Simple       as S (query, query_, execute, execute_, Only(..), In(..), connect, Query, Connection)
+import qualified Database.PostgreSQL.Simple       as S (query, query_, execute, execute_, Only(..), In(..),  Query, Connection)
 import Database.PostgreSQL.Simple.DBmore()
 import qualified Database.TypedQuery.Types as TQ
 import Language.Haskell.TH.Syntax (Q, Exp, Lift(..))
