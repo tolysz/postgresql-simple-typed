@@ -3,6 +3,7 @@
 {-# LANGUAGE ScopedTypeVariables       #-}
 {-# LANGUAGE TemplateHaskell           #-}
 {-# LANGUAGE TupleSections             #-}
+{-# LANGUAGE CPP                       #-}
 module Database.PostgreSQL.Simple.DBmoreTH (qr) where
 
 import           Control.Applicative                  (Applicative (..), (*>), (<$>), (<|>))
@@ -16,10 +17,17 @@ import           Prelude                              hiding (null)
 null :: RowParser Null
 null =  field
 
+clap =
+#if MIN_VERSION_template_haskell(2,10,0)
+   AppT
+#else
+   ClassP
+#endif
+
 qr :: Int -> Q [Dec]
 qr k = do
   ns <- replicateM k (newName "a")
-  let pre = map (\x -> ClassP (''FromField) [VarT x]) ns
+  let pre = map (\x -> clap (''FromField) [VarT x]) ns
   return [ InstanceD pre (loop k ns) [fun]
          , InstanceD pre (loop2 ns) [fun2]
          ]
