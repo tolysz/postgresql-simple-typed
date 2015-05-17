@@ -1,4 +1,4 @@
-{-# Language TemplateHaskell #-}
+{-# Language TemplateHaskell, FlexibleInstances #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
 module Database.PostgreSQL.Simple.DBmore where
@@ -20,7 +20,7 @@ qp 22
 qp 23
 qp 24
 qp 25
-
+-}
 qr 11
 qr 12
 qr 13
@@ -70,4 +70,3 @@ qr 56
 qr 57
 qr 58
 qr 59
--}
