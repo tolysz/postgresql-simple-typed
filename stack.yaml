@@ -1,0 +1,10 @@
+resolver: lts-7.21
+
+packages:
+- .
+
+extra-deps:
+- typedquery-0.1.0.3
+
+flags: {}
+extra-package-dbs: []

@@ -17,6 +17,7 @@ import           Prelude                              hiding (null)
 null :: RowParser Null
 null =  field
 
+clap :: Name -> Name -> Type
 clap t x =
 #if MIN_VERSION_template_haskell(2,10,0)
    AppT (ConT t) (VarT x)
@@ -24,12 +25,21 @@ clap t x =
    ClassP t [VarT x]
 #endif
 
+instD :: Cxt -> Type -> [Dec] -> Dec
+instD =
+#if MIN_VERSION_template_haskell(2,11,0)
+   InstanceD Nothing
+#else
+   InstanceD
+#endif
+
+
 qr :: Int -> Q [Dec]
 qr k = do
   ns <- replicateM k (newName "a")
   let pre = map (clap ''FromField) ns
-  return [ InstanceD pre (loop k ns) [fun]
-         , InstanceD pre (loop2 ns) [fun2]
+  return [ instD pre (loop k ns) [fun]
+         , instD pre (loop2 ns) [fun2]
          ]
    where
     loop 0 ns = AppT (TupleT k) (VarT (head ns))

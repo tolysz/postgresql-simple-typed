@@ -1,4 +1,5 @@
 {-# Language TemplateHaskell #-}
+{-# OPTIONS_GHC -fno-warn-orphans #-}
 
 module Database.PostgreSQL.Simple.TypedQuery
 ( genJsonQuery
