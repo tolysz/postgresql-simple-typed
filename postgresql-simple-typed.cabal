@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                postgresql-simple-typed
-version:             0.1.1
+version:             0.1.1.1
 synopsis:            Typed extension for PostgreSQL simple
 description:         Simplifies simple
 homepage:            https://github.com/tolysz/postgresql-simple-typed
@@ -10,7 +10,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Marcin Tolysz
 maintainer:          tolysz@gmail.com
-copyright:           2014-7 Marcin Tolysz
+copyright:           2014-9 Marcin Tolysz
 category:            Database
 build-type:          Simple
 extra-source-files:  README.md
