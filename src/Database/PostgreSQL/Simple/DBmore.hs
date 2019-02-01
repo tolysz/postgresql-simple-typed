@@ -21,7 +21,7 @@ qp 23
 qp 24
 qp 25
 -}
-qr 11
+{-- qr 11
 qr 12
 qr 13
 qr 14
@@ -29,8 +29,8 @@ qr 15
 qr 16
 qr 17
 qr 18
-qr 19
-qr 20
+qr 19 
+qr 20 --}
 qr 21
 qr 22
 qr 23

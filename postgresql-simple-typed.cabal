@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                postgresql-simple-typed
-version:             0.1.0.2
+version:             0.1.1
 synopsis:            Typed extension for PostgreSQL simple
 description:         Simplifies simple
 homepage:            https://github.com/tolysz/postgresql-simple-typed
@@ -25,7 +25,7 @@ library
   build-depends:       base >=4.5 && < 5
                ,       typedquery
                ,       postgresql-libpq
-               ,       postgresql-simple
+               ,       postgresql-simple >= 0.6
                ,       template-haskell
                ,       transformers
                ,       utf8-string
